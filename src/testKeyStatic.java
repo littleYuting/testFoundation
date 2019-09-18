@@ -4,6 +4,35 @@ public class testKeyStatic {
 
     public static void main(String[] args){
         testStatic();
+        /** 运行结果：
+         * just test 静态代码块 start
+         * just test 静态代码块 sleep
+         * just test 静态代码块 end
+         * just test 普通代码块
+         * Just test static function: 2, name = 0
+         * the student's name is 0 , and the total classNum ： 2
+         * just test 普通代码块
+         * Just test static function: 2, name = 1
+         * the student's name is 1 , and the total classNum ： 3
+         * just test 普通代码块
+         * Just test static function: 3, name = 2
+         * the student's name is 2 , and the total classNum ： 5
+         * final classNum : 5
+         * Just test static function: 5
+         * **********************************
+         * test staticInnerClass : Java
+         * 5
+         * Just test static function: 5
+         * just test 普通代码块
+         * cyt
+         * **********************************
+         * test normalInnerClass
+         * just test 普通代码块
+         * 5
+         * null
+         * Just test static function: 5
+         * test 静态导包， 调用 Math 中的 max 函数： max（123， 4） = 123
+         */
     }
 
     public static void testStatic(){
