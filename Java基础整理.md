@@ -4,7 +4,7 @@
 ![java语言编译](https://pic3.zhimg.com/80/45e5e8e74ed0fec7c782e30ac8c4edd7_hd.jpg) ![jvm](https://pic3.zhimg.com/80/b8934c347bde7fe377644fa78537cae0_hd.jpg)
 - 补充：
     - [解释性语言和编译型语言区别](https://www.iteye.com/blog/rednaxelafx-492667)；
-    - jvm 是运行java字节码的虚拟机，目的是实现一次编译结果，可运行在不同系统（===平台无关性==），生成相同的二进制机器码；
+    - jvm 是运行java字节码的虚拟机，目的是实现一次编译结果，可运行在不同系统（==平台无关性==），生成相同的二进制机器码；
     - java 可移植性：每种基本类型所占存储空间的大小不会随着机器硬件架构的变化而变化（也与 jvm 相关）
     - JDK：创建 + 编译程序(javac、javadoc、jdb) + 包含 JRE-运行程序 （jvm、java类库、java命令、其他基础构件）； 
 
