@@ -4,7 +4,7 @@
 ![java语言编译](https://pic3.zhimg.com/80/45e5e8e74ed0fec7c782e30ac8c4edd7_hd.jpg) ![jvm](https://pic3.zhimg.com/80/b8934c347bde7fe377644fa78537cae0_hd.jpg)
 - 补充：
     - [解释性语言和编译型语言区别](https://www.iteye.com/blog/rednaxelafx-492667)；
-    - jvm 是运行java字节码的虚拟机，目的是实现一次编译结果，可运行在不同系统（===平台无关性==），生成相同的二进制机器码；
+    - jvm 是运行java字节码的虚拟机，目的是实现一次编译结果，可运行在不同系统（==平台无关性==），生成相同的二进制机器码；
     - java 可移植性：每种基本类型所占存储空间的大小不会随着机器硬件架构的变化而变化（也与 jvm 相关）
     - JDK：创建 + 编译程序(javac、javadoc、jdb) + 包含 JRE-运行程序 （jvm、java类库、java命令、其他基础构件）； 
 
@@ -63,6 +63,18 @@
 - 一个方法可以改变一个对象参数的状态；
 - 一个方法不能让对象参数引用一个新的对象；
 14. 线程的生命周期  
-- 线程创建之后它将处于 NEW（新建） 状态，调用 start() 方法后开始运行，线程这时候处于 READY（可运行） 状态。可运行状态的线程获得了 cpu 时间片（timeslice）后就处于 RUNNING（运行） 状态。当线程执行 wait()方法之后，线程进入 **WAITING（等待）**状态。进入等待状态的线程需要依靠其他线程的通知才能够返回到运行状态，而 TIME_WAITING(超时等待) 状态相当于在等待状态的基础上增加了超时限制，比如通过 sleep（long millis）方法或 wait（long millis）方法可以将 Java 线程置于 TIMED WAITING 状态。当超时时间到达后 Java 线程将会返回到 RUNNABLE 状态。当线程调用同步方法时，在没有获取到锁的情况下，线程将会进入到 BLOCKED（阻塞） 状态。线程在执行 Runnable 的run()方法之后将会进入到 TERMINATED（终止） 状态。
+- 创建之后，线程处于 NEW 状态;
+- 调用 start() 方法后开始运行，线程这时候处于 READY（可运行） 状态;
+- 可运行状态的线程获得了 cpu 时间片（timeslice）后就处于 RUNNING（运行） 状态;
+- 执行 wait()方法后，线程进入等待状态，需依靠其他线程的通知才能够返回到运行状态
+    - TIME_WAITING(超时等待) 状态相当于在等待状态的基础上增加了超时限制，比如通过 sleep（long millis）方法或 wait（long millis）方法，当超时时间到达后 Java 线程将会返回到 RUNNABLE状态。当线程调用同步方法时，在没有获取到锁的情况下，线程将会进入到 BLOCKED（阻塞） 状态。
+- 执行 Runnable 的run()方法之后将会进入到 TERMINATED（终止） 状态。
 
-
+15. static 关键字
+- 静态成员变量和成员方法：属于类，被类的所有对象共享，一般通过类名调用；
+- 静态代码块：定义在类中方法外,执行顺序：静态代码块（只执行一次）—>非静态代码块—>构造方法（后两个在生成新对象自动调用）；
+- 静态内部类： 创建不依赖于外围类，不能使外围类的非static成员变量和方法；
+- 静态导包：import static + 指定类，直接导入静态资源，无需通过类名调用静态成员； 
+- 补充：
+    - [java 常见代码块的作用与区别](https://blog.csdn.net/Dustin_CDS/article/details/79143760)
+    - [内部类学习](https://www.cnblogs.com/chenssy/p/3388487.html)
