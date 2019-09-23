@@ -98,9 +98,11 @@ class Student{
     private String name;//非静态成员变量不能被静态代码块访问
     static Integer classNum; // 不能用private
     public Student() {}
+
     {
         System.out.println("just test 普通代码块");
     }
+
     public Student(String name) {
         this.name = name;
     }
@@ -122,7 +124,7 @@ class Student{
         new Learn().disPlay();
         System.out.println("**********************************");
         System.out.println("test normalInnerClass" );
-        Play play = new Student().new Play();// 必须通过外围类定义,此处生成了一个空对象，依然会调用普通代码块，而且name=null
+        Play play = new Student().new Play();//必须通过外围类定义,此处生成了一个空对象，依然会调用普通代码块，而且name=null
         play.disPlay();
     }
     @Override
